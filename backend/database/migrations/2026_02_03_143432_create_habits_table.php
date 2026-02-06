@@ -10,8 +10,9 @@ return new class extends Migration {
     {
         Schema::create('habits', function (Blueprint $table) {
             $table->id();
-            $table->string('title'); // Sport, English, Sewing blog
-            $table->string('category'); // health, work, hobby
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->string('title');
+            $table->string('category');
             $table->text('description')->nullable();
             $table->boolean('active')->default(true);
             $table->timestamps();

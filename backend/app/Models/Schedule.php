@@ -10,15 +10,20 @@ class Schedule extends Model
         'habit_id',
         'time',
         'days_of_week',
+        'timezone',
     ];
 
     protected $casts = [
-        'time' => 'datetime:H:i',
         'days_of_week' => 'array',
     ];
 
     public function habit()
     {
         return $this->belongsTo(Habit::class);
+    }
+
+    public function reminders()
+    {
+        return $this->hasMany(Reminder::class);
     }
 }

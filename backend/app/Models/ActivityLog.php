@@ -18,4 +18,9 @@ class ActivityLog extends Model
         'date' => 'date',
         'done_at' => 'datetime',
     ];
+
+    public function habit()
+    {
+        return $this->belongsTo(Habit::class);
+    }
 }
