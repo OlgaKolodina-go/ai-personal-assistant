@@ -6,7 +6,7 @@ use App\Models\Habit;
 use App\Models\ActivityLog;
 use Illuminate\Http\Request;
 
-class HabitActivityController extends Controller
+class ActivityLogController extends Controller
 {
     public function store(Request $request, Habit $habit)
     {
